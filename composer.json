@@ -1,0 +1,16 @@
+{
+    "name": "aping/laravel-opcache-gui",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aping",
+            "email": "czp010443@aliyun.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Aping\\LaravelOpcacheGui\\": "src/"
+        }
+    }
+}

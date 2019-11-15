@@ -1,0 +1,1 @@
+@extends('laravel-opcache-gui::layout.container')
