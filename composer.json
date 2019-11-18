@@ -5,12 +5,19 @@
     "authors": [
         {
             "name": "aping",
-            "email": "czp010443@aliyun.com"
+            "email": "czp010443@gmail.com"
         }
     ],
     "autoload": {
         "psr-4": {
             "Aping\\LaravelOpcacheGui\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aping\\LaravelOpcacheGui\\OpcacheServiceProvider"
+            ]
         }
     }
 }
