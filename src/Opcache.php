@@ -19,6 +19,16 @@ class Opcache
     protected $status;
 
     /**
+     * is enable opcache
+     *
+     * @return bool
+     */
+    public function isEnable()
+    {
+        return function_exists('opcache_get_configuration');
+    }
+
+    /**
      * opcache version
      *
      * @return string

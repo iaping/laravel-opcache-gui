@@ -14,6 +14,10 @@ class OpcacheController extends Controller
     {
         $opcache = new Opcache();
 
+        if (! $opcache->isEnable()) {
+            return response('Opcache module is not enable.');
+        }
+
         return view('laravel-opcache-gui::index', compact('opcache'));
     }
 
