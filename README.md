@@ -6,20 +6,36 @@
 ## INSTALL
 
 composer
-```bash
+```php
 php composer.phar require aping/laravel-opcache-gui
 ```
 或
-```bash
+```php
 "require": {
     "aping/laravel-opcache-gui": "dev-master"
 }
 ```
 
-配置路由 & 访问/opcache或自定义路径
+## CONFIG
+
+### Laravel 5.5+:
+
+Add Service Provider to config/app.php in providers section
 ```bash
+Aping\LaravelOpcacheGui\OpcacheServiceProvider::class,
+```
+
+publish
+```php
+php artisan vendor:publish --provider="Aping\LaravelOpcacheGui\OpcacheServiceProvider"
+```
+
+Add a route in your web routes file
+```php
 Route::get('opcache', '\Aping\LaravelOpcacheGui\Controllers\OpcacheController@index');
 ```
+
+Go to http://myapp/opcache or some other route
 
 ## TODO
 
