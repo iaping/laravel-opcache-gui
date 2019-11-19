@@ -39,4 +39,4 @@ Go to http://myapp/opcache or some other route
 
 ## TODO
 
-- 完善图表 & 清除
+- opcache flush
