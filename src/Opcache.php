@@ -41,16 +41,6 @@ class Opcache
     }
 
     /**
-     * directives
-     *
-     * @return array
-     */
-    public function directives()
-    {
-        return $this->configuration('directives');
-    }
-
-    /**
      * scripts
      *
      * @return array
@@ -58,16 +48,6 @@ class Opcache
     public function scripts()
     {
         return $this->status('scripts');
-    }
-
-    /**
-     * scripts count
-     *
-     * @return int
-     */
-    public function countScripts()
-    {
-        return count($this->scripts());
     }
 
     /**
@@ -86,33 +66,55 @@ class Opcache
     }
 
     /**
-     * memory usage
+     * directives
      *
+     * @param string $key
      * @return array
      */
-    public function memoryUsage()
+    public function directives(string $key = null)
     {
-        return $this->status('memory_usage');
+        $key = $this->prefixKey('directives', $key);
+
+        return $this->configuration($key);
+    }
+
+    /**
+     * memory usage
+     *
+     * @param string $key
+     * @return array
+     */
+    public function memoryUsage(string $key = null)
+    {
+        $key = $this->prefixKey('memory_usage', $key);
+
+        return $this->status($key);
     }
 
     /**
      * interned strings usage
      *
+     * @param string $key
      * @return array
      */
-    public function internedStringsUsage()
+    public function internedStringsUsage(string $key = null)
     {
-        return $this->status('interned_strings_usage');
+        $key = $this->prefixKey('interned_strings_usage', $key);
+
+        return $this->status($key);
     }
 
     /**
      * opcache statistics
      *
+     * @param string $key
      * @return array
      */
-    public function opcacheStatistics()
+    public function opcacheStatistics(string $key = null)
     {
-        return $this->status('opcache_statistics');
+        $key = $this->prefixKey('opcache_statistics', $key);
+
+        return $this->status($key);
     }
 
     /**
@@ -145,6 +147,18 @@ class Opcache
         }
 
         return is_null($key) ? $this->status : array_get($this->status, $key);
+    }
+
+    /**
+     * array key prefix
+     *
+     * @param string $prefix
+     * @param string|null $key
+     * @return string
+     */
+    protected function prefixKey(string $prefix, string $key = null)
+    {
+        return $prefix . ($key ? ".$key" : '');
     }
 
 }
