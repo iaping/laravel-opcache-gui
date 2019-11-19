@@ -1,7 +1,8 @@
 ## Laravel Opcache Gui
 
-#### 此包是在没找到好用的Laravel Opcache集成包开发的
 ![Screenshot](screenshot19111901.png)
+
+#### 在没找到好用的Laravel Opcache包而开发的
 
 ## INSTALL
 
@@ -34,4 +35,4 @@ Go to http://myapp/opcache or some other route
 
 ## TODO
 
-- opcache flush
+- opcache flush & tests
