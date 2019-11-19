@@ -25,11 +25,6 @@ Add Service Provider to config/app.php in providers section
 Aping\LaravelOpcacheGui\OpcacheServiceProvider::class,
 ```
 
-publish
-```php
-php artisan vendor:publish --provider="Aping\LaravelOpcacheGui\OpcacheServiceProvider"
-```
-
 Add a route in your web routes file
 ```php
 Route::get('opcache', '\Aping\LaravelOpcacheGui\Controllers\OpcacheController@index');
